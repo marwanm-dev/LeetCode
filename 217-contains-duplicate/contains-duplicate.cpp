@@ -3,15 +3,13 @@
 class Solution {
 public:
     bool containsDuplicate(vector<int>& nums) {
-        unordered_set<int> s;
-        
-        for (int i = 0; i < nums.size(); i++) {
-            if (s.find(nums[i]) != s.end()) {
+        sort(nums.begin(), nums.end());
+        for (auto it = nums.begin(); it != nums.end(); ++it) {
+            auto nextIt = it + 1;
+            if (nextIt != nums.end() && *it == *nextIt) {
                 return true;
             }
-            s.insert(nums[i]);
         }
-        
         return false;
     }
 };
