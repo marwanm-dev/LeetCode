@@ -11,7 +11,7 @@ public:
 
         if (t > b) return false;
 
-        int l = 0, r = matrix[row].size() - 1, mid;
+        int l = 0, r = matrix[0].size() - 1, mid;
         while (l <= r) {
             mid = (l + r) / 2;
             if (matrix[row][mid] == target) return true;
