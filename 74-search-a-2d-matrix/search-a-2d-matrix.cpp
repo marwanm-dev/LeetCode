@@ -9,8 +9,7 @@ public:
             else break;
         }
 
-        if (t > b)
-            return false;
+        if (t > b) return false;
 
         int l = 0, r = matrix[row].size() - 1, mid;
         while (l <= r) {
