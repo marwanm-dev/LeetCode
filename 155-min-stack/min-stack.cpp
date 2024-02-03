@@ -3,25 +3,22 @@ public:
     MinStack() {}
     
     void push(int val) {
-        s.push(val);
-        mins.push(!mins.empty() ? min(val, mins.top()) : val);
+        stk.push({val, !stk.empty() ? min(val, stk.top().second) : val});
     }
     
     void pop() {
-        s.pop();
-        mins.pop();
+        stk.pop();
     }
     
     int top() {
-        return s.top();
+        return stk.top().first;
     }
     
     int getMin() {
-        return mins.top();
+        return stk.top().second;
     }
 private:
-    stack<int> s;
-    stack<int> mins;
+    stack<pair<int, int>> stk;
 };
 
 /**
